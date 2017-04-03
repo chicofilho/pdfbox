@@ -212,7 +212,8 @@ public class KerningSubtable
         }
         else if (format == 2)
         {
-            readSubtable0Format2(data);
+            LOG.debug("Skipped kerning subtable due to an unsupported kerning subtable version: " + format);
+            //readSubtable0Format2(data);
         }
         else
         {
