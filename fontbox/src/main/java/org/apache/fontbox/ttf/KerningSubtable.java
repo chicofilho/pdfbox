@@ -190,8 +190,10 @@ public class KerningSubtable
         int length = data.readUnsignedShort();
         if (length < 6)
         {
-            throw new IOException("Kerning sub-table too short, got " + length
+            LOG.warn("Kerning sub-table too short, got " + length
                     + " bytes, expect 6 or more.");
+            // throw new IOException("Kerning sub-table too short, got " + length
+            //         + " bytes, expect 6 or more.");
         }
         int coverage = data.readUnsignedShort();
         if (isBitsSet(coverage, COVERAGE_HORIZONTAL, COVERAGE_HORIZONTAL_SHIFT))
@@ -230,14 +232,17 @@ public class KerningSubtable
 
     private void readSubtable0Format2(TTFDataStream data) throws IOException
     {
-        throw new UnsupportedOperationException(
-                "Kerning table version 0 format 2 not yet supported.");
+        
+        LOG.debug("Kerning table version 0 format 2 not yet supported.");
+        // throw new UnsupportedOperationException(
+        //         "Kerning table version 0 format 2 not yet supported.");
     }
 
     private void readSubtable1(TTFDataStream data) throws IOException
     {
-        throw new UnsupportedOperationException(
-                "Kerning table version 1 formats not yet supported.");
+        LOG.debug("Kerning table version 1 formats not yet supported.");
+        // throw new UnsupportedOperationException(
+        //         "Kerning table version 1 formats not yet supported.");
     }
 
     private static boolean isBitsSet(int bits, int mask, int shift)
