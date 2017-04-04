@@ -183,8 +183,9 @@ public class KerningSubtable
         int version = data.readUnsignedShort();
         if (version != 0)
         {
-            throw new UnsupportedOperationException("Unsupported kerning sub-table version: "
-                    + version);
+            //throw new UnsupportedOperationException("Unsupported kerning sub-table version: " + version);
+            LOG.warn("Unsupported kerning sub-table version: " + version);
+            
         }
         int length = data.readUnsignedShort();
         if (length < 6)
